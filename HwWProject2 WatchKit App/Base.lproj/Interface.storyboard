@@ -1,14 +1,63 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13771" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13756"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="HwWProject2_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label alignment="center" hidden="YES" text="You win!" id="Wz9-u7-GJl">
+                            <fontDescription key="font" type="system" pointSize="20"/>
+                        </label>
+                        <imageView width="0.5" height="0.5" alignment="center" id="2Mg-Ho-zfs"/>
+                        <separator alignment="left" id="HrP-X8-GsP"/>
+                        <group width="1" height="0.33000000000000002" alignment="left" id="fH8-4l-nGU">
+                            <items>
+                                <button width="0.33000000000000002" height="1" alignment="left" id="D3G-uv-cFL">
+                                    <connections>
+                                        <action selector="rockTapped" destination="AgC-eL-Hgc" id="u5I-1t-Rlt"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" height="1" alignment="left" id="KB3-HK-SzM">
+                                    <connections>
+                                        <action selector="paperTapped" destination="AgC-eL-Hgc" id="6oA-Yd-6ao"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" height="1" alignment="left" id="OS7-tm-kTh">
+                                    <connections>
+                                        <action selector="scissorsTapped" destination="AgC-eL-Hgc" id="mOh-0J-SfE"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="0.90000000000000002" alignment="center" id="7IB-AI-1Py">
+                            <items>
+                                <label alignment="left" text="1/20" id="zYJ-iI-6F0"/>
+                                <timer alignment="right" id="iBa-a9-Q8G">
+                                    <calendarUnit key="units" minute="YES" second="YES"/>
+                                </timer>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="answers" destination="fH8-4l-nGU" id="j3s-bx-5zh"/>
+                        <outlet property="levelCounter" destination="zYJ-iI-6F0" id="fHA-Jd-t6y"/>
+                        <outlet property="paper" destination="KB3-HK-SzM" id="FRx-Vs-A8W"/>
+                        <outlet property="question" destination="2Mg-Ho-zfs" id="qCX-yF-hB5"/>
+                        <outlet property="result" destination="Wz9-u7-GJl" id="NpY-8t-u4L"/>
+                        <outlet property="rock" destination="D3G-uv-cFL" id="ix2-Pm-A62"/>
+                        <outlet property="scissors" destination="OS7-tm-kTh" id="Hnx-fz-YEL"/>
+                        <outlet property="timer" destination="iBa-a9-Q8G" id="EF7-ap-PuV"/>
+                    </connections>
+                </controller>
             </objects>
         </scene>
     </scenes>
